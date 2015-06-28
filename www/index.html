@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Enigma</title>
+        <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    
+    
+    <link rel="stylesheet" href="jquery-mobile/styles/jquery.mobile.custom.structure.min.css" />
+    <link rel="stylesheet" href="jquery-mobile/styles/jquery.mobile.custom.theme.min.css" />
+    <link rel="stylesheet" href="themes/TecdoTheme.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+    <link href="styles/main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="jquery-mobile/styles/css-banner/swiper.min.css" />
+    <link rel="stylesheet" href="jquery-mobile/styles/messi.min.css" />
+    
+    <script src="jquery-mobile/js/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="jquery-mobile/js/jquery.mobile.custom.min.js" type="text/javascript"></script>
+    <script src="jquery-mobile/js/js-banner/swiper.jquery.min.js" type="text/javascript"></script>
+    <script src="jquery-mobile/js/messi.min.js" type="text/javascript"></script>
+    <script src="js/login.js" type="text/javascript"></script>
+
+    <style>
+		.backGroundApp 
+		{
+			background: rgb(169,219,125); /* Old browsers */
+			background: -moz-radial-gradient(center, ellipse cover,  rgba(169,219,125,1) 0%, rgba(104,196,39,1) 71%, rgba(90,160,33,1) 100%); /* FF3.6+ */
+			background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(169,219,125,1)), color-stop(71%,rgba(104,196,39,1)), color-stop(100%,rgba(90,160,33,1))); /* Chrome,Safari4+ */
+			background: -webkit-radial-gradient(center, ellipse cover,  rgba(169,219,125,1) 0%,rgba(104,196,39,1) 71%,rgba(90,160,33,1) 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-radial-gradient(center, ellipse cover,  rgba(169,219,125,1) 0%,rgba(104,196,39,1) 71%,rgba(90,160,33,1) 100%); /* Opera 12+ */
+			background: -ms-radial-gradient(center, ellipse cover,  rgba(169,219,125,1) 0%,rgba(104,196,39,1) 71%,rgba(90,160,33,1) 100%); /* IE10+ */
+			background: radial-gradient(ellipse at center,  rgba(169,219,125,1) 0%,rgba(104,196,39,1) 71%,rgba(90,160,33,1) 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9db7d', endColorstr='#5aa021',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+		}
+		.swiper-container {
+			width: 100%;
+			height: 10%;
+		
+		}
+		.swiper-slide {
+			text-align: center;
+			font-size: 18px;
+			background: #fff;
+			width: 60%;
+			border-radius: 15px;
+			
+			/* Center slide text vertically */
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			-webkit-justify-content: center;
+			justify-content: center;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			-webkit-align-items: center;
+			align-items: center;
+		}
+		
+		.ui-icon-carreta:after {
+			background-image:url(img/promo.png);
+			background-repeat:no-repeat;
+			background-size:cover;
+			width:23px;
+			height:23px;
+			box-shadow: none;
+			-webkit-box-shadow: none;
+		}
+		.ajaxDiv{
+			vertical-align:middle;
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			z-index: 100;
+			background-color:rgba(0, 0, 0, 0.65);
+			filter: alpha(opacity=40);
+			width: 132px;
+		}
+		.nav-glyphish-example .ui-btn { padding-top: 40px !important; }
+		.nav-glyphish-example .ui-btn:after { width: 30px!important; height: 30px!important; margin-left: -15px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: 0 !important; border-radius: 0 !important; }
+		#back:after { background:  url(img/back.png) 50% 50% no-repeat; background-size: 24px 22px; }
+		#home:after { background:  url(jquery-mobile/styles/images/icons-png/home-black.png) 50% 50% no-repeat; background-size: 24px 16px;  }
+		
+		.inboxColor
+		{
+			background-color:rgba(66, 149, 35, 0.70);
+		}
+		
+		.outboxColor
+		{
+			background-color:rgba(91, 200, 50, 0.70);
+			margin-left:40%
+		}
+		
+		.imagAppList
+		{
+			width:80%; 
+			height:80%; 
+			margin-top:10px; 
+			margin-left:5px; 
+			border-radius:5px;
+		}
+    </style>
+    
+	<script type="text/javascript">
+	
+		$(document).ready(function(e) 
+		{
+			var MySwiper = $(".swiper-container").swiper(
+			{
+				scrollbar: '.swiper-scrollbar',
+				slidesPerView: 4,
+				centeredSlides: true,
+				paginationClickable: true,
+				spaceBetween: 30,
+				grabCursor: true,
+				direction: 'vertical' 
+			});   
+			
+        });
+			
+	</script>
+    
+</head>
+<body style="overflow:hidden; background-image:url(img/seguridad-encriptacion-activistas.jpg); background-size:cover; background-repeat:repeat-y">
+
+    <!--Home-->
+    <div id="page-home" data-role="page" data-theme="b" style="background-image:url(img/seguridad-encriptacion-activistas.jpg); background-repeat:repeat">
+
+        <!--Header-->
+        <div data-role="header" data-position="fixed">
+        	<div class="left" style="width:90%; height:100%; background-color:#c2a63d"><h1>Pollodesu</h1></div>
+            <div class="right" style="width:10%; height:100%; border-radius:5px;"><img src="img/mooi-blauw-oog.jpg" style="width:100%; height:100%"/></div>
+        </div>
+
+        <!--Content-->
+        <div data-role="content">
+        	<div class="swiper-container" id="MainMsn" style="margin-bottom:0px; margin-top:0px">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide inboxColor triangle-isosceles">Slide 1</div>
+                    <div class="swiper-slide outboxColor triangle-isosceles out">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                    <div class="swiper-slide">Slide 4</div>
+                    <div class="swiper-slide">Slide 5</div>
+                    <div class="swiper-slide">Slide 6</div>
+                    <div class="swiper-slide">Slide 7</div>
+                    <div class="swiper-slide">Slide 8</div>
+                    <div class="swiper-slide">Slide 9</div>
+                    <div class="swiper-slide">Slide 10</div>
+                </div>
+                <!-- Add Scrollbar -->
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+       
+
+        <!--Footer-->
+        <div data-role="footer" data-position="fixed" data-id="oneFooter">
+            <input type="text" placeholder="Escriba un Mensage"/>
+        </div>
+
+    </div>
+    
+   
+	<script type="text/javascript">
+      
+	 $("#MainMsn").height(window.innerHeight  - 220);
+
+    </script>
+</body>
+</html>
