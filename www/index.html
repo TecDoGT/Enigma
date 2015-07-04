@@ -107,9 +107,11 @@
     
 	<script type="text/javascript">
 	
+		var MySwiper;
+		
 		$(document).ready(function(e) 
 		{
-			var MySwiper = $(".swiper-container").swiper(
+			MySwiper = $(".swiper-container").swiper(
 			{
 				scrollbar: '.swiper-scrollbar',
 				slidesPerView: 4,
@@ -125,9 +127,26 @@
 			$("[data-role=header]").toolbar({ tapToggle: false });
 			$("[data-role=footer]").toolbar({ tapToggle: false }); 
 			
+			MySwiper.update(true);
 			MySwiper.slideTo((MySwiper.slides.length - 1));
-			
+
         });
+		
+		$(window).resize(function()
+		{
+			MySwiper.update(true);
+			MySwiper.slideTo((MySwiper.slides.length - 1));
+		});
+		
+		function SMsn ()
+		{ 
+			var texto = $("#tm").val();
+			var globo = '<div class="swiper-slide outboxColor triangle-isosceles out">' + texto + "</div>";
+			MySwiper.appendSlide(globo);
+			MySwiper.update(true);
+			MySwiper.slideTo((MySwiper.slides.length - 1));
+			$("#tm").val("");
+		}
 			
 	</script>
     
@@ -168,8 +187,8 @@
         <div data-role="footer" data-position="fixed" data-id="oneFooter">
         	<table style="width:inherit">
             	<tr>
-                	<td><input type="text" placeholder="Escriba un Mensage" /></td>
-                    <td style="width:80px"><button class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-b ui-btn-icon-right ui-btn-right" style="margin-right:15px; margin-top:13px">Enviar</button></td>
+                	<td><input type="text" id="tm" placeholder="Escriba un Mensage" /></td>
+                    <td style="width:80px"><button class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-b ui-btn-icon-right ui-btn-right" style="margin-right:15px; margin-top:13px" onClick="SMsn();">Enviar</button></td>
                 </tr>
             </table>
         </div>
