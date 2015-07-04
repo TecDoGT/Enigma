@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>Enigma</title>
-        <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
     
     
@@ -117,12 +117,15 @@
 				paginationClickable: true,
 				spaceBetween: 30,
 				grabCursor: true,
-				direction: 'vertical' 
+				direction: 'vertical',
+				freeMode: true
 			});  
 			
 			$("#MainMsn").height(window.innerHeight  - 220);
 			$("[data-role=header]").toolbar({ tapToggle: false });
 			$("[data-role=footer]").toolbar({ tapToggle: false }); 
+			
+			MySwiper.slideTo((MySwiper.slides.length - 1));
 			
         });
 			
@@ -137,7 +140,7 @@
         <!--Header-->
         <div data-role="header" data-position="fixed">
         	<div class="left" style="width:90%; height:100%; background-color:#c2a63d"><h1>Pollodesu</h1></div>
-            <div class="right" style="width:10%; height:100%; border-radius:5px;"><img src="img/mooi-blauw-oog.jpg" style="width:100%; height:10%"/></div>
+            <div class="right" style="width:10%; height:100%; border-radius:5px; background-image:url(img/mooi-blauw-oog.jpg); background-size:cover"></div>
         </div>
 
         <!--Content-->
@@ -163,7 +166,12 @@
 
         <!--Footer-->
         <div data-role="footer" data-position="fixed" data-id="oneFooter">
-            <input type="text" placeholder="Escriba un Mensage"/>
+        	<table style="width:inherit">
+            	<tr>
+                	<td><input type="text" placeholder="Escriba un Mensage" /></td>
+                    <td style="width:80px"><button class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-r ui-btn-b ui-btn-icon-right ui-btn-right" style="margin-right:15px; margin-top:13px">Enviar</button></td>
+                </tr>
+            </table>
         </div>
 
     </div>
